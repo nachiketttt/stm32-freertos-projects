@@ -1,0 +1,28 @@
+# STM32CubeIDE build output
+Debug/
+Release/
+
+# IDE settings
+.settings/
+
+# CubeIDE project files
+.cproject
+.project
+.mxproject
+*.launch
+*.ioc
+
+# Compiled output
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+
+# Object files
+*.o
+*.d
+
+# Linker files (auto-generated)
+STM32F446RETX_FLASH.ld
+STM32F446RETX_RAM.ld
