@@ -272,6 +272,8 @@ void vPortEndScheduler( void ) PRIVILEGED_FUNCTION;
 
 #endif
 
+void vInitPrioGroupValue(void);
+
 /* *INDENT-OFF* */
 #ifdef __cplusplus
     }

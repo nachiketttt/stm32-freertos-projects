@@ -18,3 +18,9 @@ Built with STM32CubeIDE on Fedora Linux.
 - HAL timebase moved to TIM6, SysTick reserved for FreeRTOS
 - FreeRTOS handlers mapped via defines in FreeRTOSConfig.h
 - stdout buffering disabled via setvbuf for ITM printf
+
+## Highlights
+
+### SEGGER SystemView timeline showing task switching for 001_Task
+![systemview](/img/001_task_sysview.png)
+
