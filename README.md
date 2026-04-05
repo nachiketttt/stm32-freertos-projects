@@ -21,6 +21,6 @@ Built with STM32CubeIDE on Fedora Linux.
 
 ## Highlights
 
-### SEGGER SystemView timeline showing task switching for 001_Task
-![systemview](/img/001_task_sysview.png)
+### SEGGER SystemView timeline showing task switching for 001_Task (In cooperative mode)
+![systemview](/img/001_sysview_printf.png)
 
