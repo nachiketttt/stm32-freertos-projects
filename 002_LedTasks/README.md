@@ -1,4 +1,4 @@
-# 002_LED_Tasks
+# 002_LedTasks
 
 Three FreeRTOS tasks independently controlling three LEDs at different
 toggle rates, verified with SEGGER SystemView RTT recording.
@@ -13,7 +13,7 @@ toggle rates, verified with SEGGER SystemView RTT recording.
 
 ## Output
 
-### SEGGER SystemView — Task Timeline
+### SEGGER SystemView displaying Task Timeline
 ![SystemView](../img/002_ledTask_sysview.png)
 
 ### Circuit
