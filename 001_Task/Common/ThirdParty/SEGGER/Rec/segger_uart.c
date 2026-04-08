@@ -3,7 +3,7 @@
 *   Solutions for real time microcontroller applications
 ***********************************************************
 File    : HIF_UART.c
-Purpose : Terminal control for Flasher using USART1 on PA9/PA10
+Purpose : Terminal control for Flasher using USART2 on PA2/PA3
 --------- END-OF-HEADER ---------------------------------*/
 
 
@@ -13,7 +13,7 @@ Purpose : Terminal control for Flasher using USART1 on PA9/PA10
 #include "SEGGER_RTT.h"
 #include "stm32f4xx.h"
 
-#define OS_FSYS 168000000L   // MCU core frequency of Flasher ARM Pro V4
+#define OS_FSYS 84000000L   // MCU core frequency of Flasher ARM Pro V4
 #define RCC_BASE_ADDR       0x40023800
 
 #define OFF_AHB1ENR         0x30        // AHB1 peripheral clock enable register
@@ -48,7 +48,7 @@ Purpose : Terminal control for Flasher using USART1 on PA9/PA10
 #define OFF_CR3             0x14        // Control register 3
 
 
-#define UART_BASECLK        OS_FSYS / 4       // USART2 runs on APB1 clock
+#define UART_BASECLK        OS_FSYS / 2       // USART2 runs on APB1 clock
 #define GPIO_BASE_ADDR      GPIOA_BASE_ADDR
 #define USART_BASE_ADDR     USART2_BASE_ADDR
 #define GPIO_UART_TX_BIT    2                // USART2 TX: Pin pa2
@@ -110,12 +110,17 @@ static void _StartSysView(void) {
 }
 
 static void _cbOnUARTRx(U8 Data) {
-  if (_SVInfo.NumBytesHelloRcvd < _SERVER_HELLO_SIZE) {  // Not all bytes of <Hello> message received by SysView yet?
+  if (_SVInfo.NumBytesHelloRcvd < _SERVER_HELLO_SIZE) {
     _SVInfo.NumBytesHelloRcvd++;
+
+    // ADD THIS: Once we receive the 4th hello byte from the PC, kick off the TX!
+    if (_SVInfo.NumBytesHelloRcvd == _SERVER_HELLO_SIZE) {
+      HIF_UART_EnableTXEInterrupt();
+    }
     goto Done;
   }
   _StartSysView();
-  SEGGER_RTT_WriteDownBuffer(_SVInfo.ChannelID, &Data, 1);  // Write data into corresponding RTT buffer for application to read and handle accordingly
+  SEGGER_RTT_WriteDownBuffer(_SVInfo.ChannelID, &Data, 1);
 Done:
   return;
 }
@@ -252,7 +257,7 @@ void HIF_UART_Init(uint32_t Baudrate, UART_ON_TX_FUNC_P cbOnTx, UART_ON_RX_FUNC_
             ;
   USART_CR3 = 0
             | (0 << 11)                         // ONEBIT = 0; Three sample bit method
-            | (1 <<  7)                         // DMAT   = 1; DMA for transmitter enabled
+            | (0 <<  7)                         // DMAT   = 1; DMA for transmitter enabled
             ;
   //
   // Set baudrate
@@ -271,7 +276,7 @@ void HIF_UART_Init(uint32_t Baudrate, UART_ON_TX_FUNC_P cbOnTx, UART_ON_RX_FUNC_
   //
   _cbOnRx = cbOnRx;
   _cbOnTx = cbOnTx;
-  NVIC_SetPriority(USART_IRQn, 6);  // Highest prio, so it is not disabled by embOS
+  NVIC_SetPriority(USART_IRQn, 5);  // Highest prio
   NVIC_EnableIRQ(USART_IRQn);
 }
 
