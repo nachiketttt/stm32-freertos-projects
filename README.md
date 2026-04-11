@@ -20,7 +20,7 @@ Built with STM32CubeIDE on Fedora Linux.
 - stdout buffering disabled via setvbuf for ITM printf
 
 ## Issue resolved to turn on UART based recording for Segger Systemview software
-The older version 3.62 was used as the latest version crashes immediately when start recording button is pressed
+The older version 3.62 was used as the latest version crashes immediately when start recording button is pressed. 
 Also the DWT registers are read only or turned off by default to save power in this specific nucleo board
 - DEMCR (0xE000EDFC): Set bit 24 (TRCENA) to power on the global Debug/Trace architecture
 - DWT_LAR (0xE0001FB0): Wrote 0xC5ACCE55 to unlock write access to the cycle counter registers
