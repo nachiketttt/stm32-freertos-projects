@@ -3,9 +3,10 @@
 Three FreeRTOS tasks independently controlling three LEDs at different
 toggle rates, verified with SEGGER SystemView RTT using UART based recording now. 
 Also vTaskDelay is used instead of HAL delay function to achieve much less load on the CPU
+- Same connects as the earlier led project have been used
 
 ## Tasks
-- Same connects as before have been used
+
 | Task | LED | GPIO | Toggle Rate | Priority |
 |------|-----|------|-------------|----------|
 | LED_green_task | Green | PA0 | 1000ms | 2 |
