@@ -1,4 +1,4 @@
-# 003_Led_Blocktasks
+# 004_Led_PeriodicTasks
 
 Three FreeRTOS tasks independently controlling three LEDs at different
 toggle rates. Also vTaskDelayUntil is used to get periodic toggling of leds at a fixed "absolute" time
