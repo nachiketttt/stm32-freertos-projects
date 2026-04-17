@@ -1,9 +1,10 @@
-# 004_Led_PeriodicTasks
+# 005_Led_TaskNotify
 
 Three FreeRTOS tasks independently controlling three LEDs get deleted one by one at each
 user button press and finally the last red led task deletes itself and the button task too
 - Same connections as the earlier led project have been used
 - xTaskNotify() is used to notify the respective task with each button press
+
 ## Tasks
 
 | Task | LED | GPIO | Toggle Rate | Priority |
