@@ -12,6 +12,7 @@ user button press and finally the last red led task deletes itself and the butto
 | LED_green_task | Green | PA0 | 1000ms | 3 |
 | LED_yellow_task | Yellow | PA1 | 800ms | 2 |
 | LED_red_task | Red | PA4 | 400ms | 1 |
+| button_handler_task | - | PC13 | - | 4 |
 
 ## Output
 
