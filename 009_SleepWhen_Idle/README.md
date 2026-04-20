@@ -18,10 +18,12 @@ toggle rates
 ## Output
 
 ### Multimeter readings displaying current consumption
-- Before sleep mode is enabled
-![Multimeter](../img/before_sleepadd.jpg)
 
-- After sleep mode is enabled
-![Multimeter](../img/sleep_add.jpg)
+| Sleep mode configuration | Multimeter reading |
+|-------------|----------|
+| Sleep mode OFF | ![Multimeter](../img/before_sleepadd.jpg) |
+| Sleep mode ON | ![Multimeter](../img/sleep_add.jpg) |
+
+
 
 
