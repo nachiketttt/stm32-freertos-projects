@@ -1,6 +1,6 @@
 # 010_QueuesAnd_Timers
-Software timers and Queues used to send notifications to tasks to control leds in specific patterns and
-to set current time and date by user input via UART  
+Software timers and queues used to build a UART-controlled menu system
+for configuring LED effects and RTC time/date on STM32 via FreeRTOS. 
 
 ## Tasks
 
@@ -20,7 +20,7 @@ to set current time and date by user input via UART
 
 ## Output
 
-### Time Coniguration
+### Time Configuration
 - for detailed information check the log file in the folder
 ![Moserial](../img/time_config.png)
 
