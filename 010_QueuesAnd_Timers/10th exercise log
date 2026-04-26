@@ -1,0 +1,81 @@
+=============================
+|            MENU            |
+=============================
+LED effect    --------> 0
+Date and Time --------> 1
+Exit          --------> 2
+Enter your choice : 
+0
+=============================
+|         LED EFFECTS        |
+=============================
+(none, e1, e2, e3, e4)
+Enter your choice : 
+e1
+=============================
+|            MENU            |
+=============================
+LED effect    --------> 0
+Date and Time --------> 1
+Exit          --------> 2
+Enter your choice : 
+1
+========================
+|          RTC         |
+========================
+
+Current Time and Date:	00:00:26 [AM]	01-01-2000
+Configure Time            ----> 0
+Configure Date            ----> 1
+Enable reporting          ----> 2
+Exit                      ----> 3
+Enter your choice here : 
+0
+Enter hour    (1-12):
+6
+Enter minutes (0-59):
+30
+Enter seconds (0-59):
+34
+Enter the time format (for AM input 1/for PM input 2):
+2
+Configuration successful
+
+Current Time and Date:	06:30:34 [PM]	01-01-2000
+=============================
+|            MENU            |
+=============================
+LED effect    --------> 0
+Date and Time --------> 1
+Exit          --------> 2
+Enter your choice : 
+1
+========================
+|          RTC         |
+========================
+
+Current Time and Date:	06:30:36 [PM]	01-01-2000
+Configure Time            ----> 0
+Configure Date            ----> 1
+Enable reporting          ----> 2
+Exit                      ----> 3
+Enter your choice here : 
+1
+Enter date(1-31):
+25
+Enter month(1-12):
+4
+Enter year(0-99):
+26
+Enter day(1-7 sun:1):
+7
+Configuration successful
+
+Current Time and Date:	06:30:52 [PM]	04-25-2026
+=============================
+|            MENU            |
+=============================
+LED effect    --------> 0
+Date and Time --------> 1
+Exit          --------> 2
+Enter your choice : 
