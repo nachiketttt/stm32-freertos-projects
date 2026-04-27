@@ -37,5 +37,7 @@ for configuring LED effects and RTC time/date on STM32 via FreeRTOS.
 | e3 | ![pulseview](../img/e3_effect.png) |
 | e4 | ![pulseview](../img/e4_effect.png) |
 
+### Time reporting every second via SWV ITM data console
+![cubeide](../img/time_reporting.png)
 
 
