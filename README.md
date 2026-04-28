@@ -10,9 +10,22 @@ Built with STM32CubeIDE on Fedora Linux.
 
 ## Projects
 
-| # | Project | Concepts |
-|---|---------|----------|
-| 001 | Task Creation | xTaskCreate, preemptive vs cooperative scheduling |
+| #   | Project                      | Concepts                                                                 |
+|-----|------------------------------|--------------------------------------------------------------------------|
+| 001 | Task Creation                | xTaskCreate, preemptive vs cooperative scheduling                        |
+| 002 | Led Tasks                    | Multiple tasks, task priorities, GPIO control                            |
+| 003 | LED Block Tasks              | vTaskDelay, blocked state, task states                                   |
+| 004 | LED Periodic Tasks           | Periodic task execution, vTaskDelayUntil                                 |
+| 005 | LED Task Notify              | xTaskNotify, xTaskNotifyWait, inter-task communication                   |
+| 006 | LED Task Suspend             | vTaskSuspend, vTaskResume, task lifecycle                                |
+| 007 | LED Button ISR               | GPIO interrupts, xTaskNotifyFromISR, ISR to task communication           |
+| 008 | Task Priority Switch         | Runtime priority changes, vTaskPrioritySet, preemption                   |
+| 009 | Sleep When Idle              | Idle hook, low power modes                                               |
+| 010 | Queues And Timers            | xQueueCreate, xQueueSend, xQueueReceive, software timers, RTC control    |
+| 011 | Binary Semaphore Task Sync   | xSemaphoreCreateBinary, task synchronisation, signalling                 |
+| 012 | Counting Semaphore           | xSemaphoreCreateCounting, resource management, xSemaphoreGiveFromISR     |
+| 013 | Binary Semaphore Mutex       | Mutual exclusion using binary semaphore, race conditions                 |
+| 014 | Mutex API                    | xSemaphoreCreateMutex, xSemaphoreTake, xSemaphoreGive, priority inheritance |
 
 ## Setup
 - HAL timebase moved to TIM6, SysTick reserved for FreeRTOS
